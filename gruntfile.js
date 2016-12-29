@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -12,13 +12,13 @@ module.exports = function(grunt) {
             }
         },
         version: {
-          // options: {},
-          defaults: {
-            src: ['src/version.js', 'bower.json']
-          }
+            // options: {},
+            defaults: {
+                src: ['src/version.js', 'bower.json']
+            }
         },
 
-        copy : {
+        copy: {
             bower: {
                 src: [
                     'bower_components/image-jpeg2000/dist/jpx.min.js',
@@ -30,8 +30,8 @@ module.exports = function(grunt) {
                     'bower_components/cornerstoneTools/dist/cornerstoneTools.js',
                     'bower_components/cornerstoneMath/dist/cornerstoneMath.js',
                     'bower_components/cornerstoneMath/dist/bootstrap.js',
-                  'bower_components/bootstrap/dist/js/bootstrap.min.js',
-                  'bower_components/bootstrap/dist/css/bootstrap.min.css'
+                    'bower_components/bootstrap/dist/js/bootstrap.min.js',
+                    'bower_components/bootstrap/dist/css/bootstrap.min.css'
                 ],
                 dest: 'examples',
                 expand: true,
@@ -40,17 +40,17 @@ module.exports = function(grunt) {
         },
         concat: {
             build: {
-                src : ['src/header.js', 'src/imageLoaders/loadImage.js', 'src/**/*.js'],
+                src: ['src/cjsHeader.js', 'src/imageLoaders/loadImage.js', 'src/**/*.js', '!src/footer.js', 'src/footer.js'],
                 dest: 'build/built.js'
             },
             dist: {
                 options: {
                     stripBanners: true,
                     banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                        '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                        '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
+                    '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+                    '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
                 },
-                src : ['build/built.js'],
+                src: ['build/built.js'],
                 dest: 'dist/cornerstoneWADOImageLoader.js'
             }
         },
@@ -62,8 +62,8 @@ module.exports = function(grunt) {
             },
             options: {
                 banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                    '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                    '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
+                '<%= grunt.template.today("yyyy-mm-dd") %> ' +
+                '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
             }
         },
         jshint: {
