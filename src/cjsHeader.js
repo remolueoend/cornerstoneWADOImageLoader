@@ -1,4 +1,4 @@
-var cornerstone = require('../../cornerstone/build/built');
+var cornerstone = require('cornerstone');
 //var CharLS = require('../examples/libCharLS');
 var OpenJPEG = require('../examples/libopenjpeg');
 var dicomParser = require('dicom-parser');

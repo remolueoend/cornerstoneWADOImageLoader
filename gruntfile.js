@@ -66,14 +66,6 @@ module.exports = function (grunt) {
                 '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
             }
         },
-        jshint: {
-            files: [
-                'src/*.js'
-            ]
-        },
-        qunit: {
-            all: ['test/*.html']
-        },
         watch: {
             scripts: {
                 files: ['src/**/*.js', 'test/*.js'],
@@ -84,18 +76,6 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('buildAll', ['clean', 'concat:build', 'concat:dist', 'uglify', 'jshint']);
+    grunt.registerTask('buildAll', ['clean', 'concat:build', 'concat:dist', 'uglify']);
     grunt.registerTask('default', ['buildAll']);
 };
-
-// Release process:
-//  1) Update version numbers
-//     update version in package.json
-//     grunt version
-//  2) do a build (needed to update dist versions with correct build number)
-//  3) commit changes
-//      git commit -am "Changes...."
-//  4) tag the commit
-//      git tag -a 0.1.0 -m "Version 0.1.0"
-//  5) push to github
-//      git push origin master --tags
