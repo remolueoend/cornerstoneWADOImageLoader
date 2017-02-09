@@ -54,18 +54,6 @@ module.exports = function (grunt) {
                 dest: 'dist/cornerstoneWADOImageLoader.js'
             }
         },
-        uglify: {
-            dist: {
-                files: {
-                    'dist/cornerstoneWADOImageLoader.min.js': ['dist/cornerstoneWADOImageLoader.js']
-                }
-            },
-            options: {
-                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-                '<%= grunt.template.today("yyyy-mm-dd") %> ' +
-                '| (c) 2014 Chris Hafey | https://github.com/chafey/cornerstoneWADOImageLoader */\n'
-            }
-        },
         watch: {
             scripts: {
                 files: ['src/**/*.js', 'test/*.js'],
@@ -76,6 +64,6 @@ module.exports = function (grunt) {
 
     require('load-grunt-tasks')(grunt);
 
-    grunt.registerTask('buildAll', ['clean', 'concat:build', 'concat:dist', 'uglify']);
+    grunt.registerTask('buildAll', ['clean', 'concat:build', 'concat:dist']);
     grunt.registerTask('default', ['buildAll']);
 };
