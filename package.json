@@ -29,7 +29,6 @@
     "load-grunt-tasks": "^0.2.1"
   },
   "dependencies": {
-    "cornerstone": "git+https://github.com/remolueoend/cornerstone.git",
     "dicom-parser": "^1.7.4",
     "jquery": "^2.1.4"
   }
